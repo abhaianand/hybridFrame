@@ -1,0 +1,19 @@
+git init
+
+git config --global user.name "your name"
+git config --global user.email "your email"
+
+git status
+
+git add -A (add all the folder to staging)
+
+git add -filename (only add single file)
+
+
+git commit -m "comment message" add file to local repo
+
+remote repo - https://github.com/abhaianand/hybridFrame.git
+
+git remote add origin "https://github.com/abhaianand/hybridFrame.git"
+git push origin master
+

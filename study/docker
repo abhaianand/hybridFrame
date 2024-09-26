@@ -1,0 +1,76 @@
+docker commands - general
+------------------------------
+
+* docker version
+if this command give error go to windows service and restart
+* docker info
+information about the docker
+*docker--help
+for any use
+*docker login
+
+image related commands
+--------------------------
+*docker images -- check image status of our system do we have any image in the system
+*docker pull IMAGENAME -- pull image from docker hub
+*docker rmi IMAGEID - delete image from the docker (rmi - remove images)
+
+docker container commands
+----------------------------------
+docker ps  - for check  status of currently running contsiners
+docker ps -a command lists all Docker containers, including those that are stopped
+docer run IMAGENAME/imageID- to start the a container using a image
+docker start IMAGENAME/IMAGEID - start running of a container
+docker stop IMAGENAME/IMAGEID - stop the running of a container
+docker -it imagename -- to interact with docker in Linux command
+docker rm conatinerID -- remove container
+
+system commands
+---------------------
+
+docker stats
+docker dydtem df
+docker system prun -f
+
+
+docker images needed
+-----------------------
+1 hub
+2 linux - firefox
+3 linux - chrome
+for hub - docker pull selenium/hub
+for linufirefox- docker pull selenium/node-firefox
+for linux chrome - docker pull selenium/node-chrome
+
+
+
+docker network creation(all container should be part of a single network)
+--------------------------------
+docker network creating grid - start the network
+
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub - connect hub to the network and start hub
+
+
+establish node to network and connect to hub
+---------------------------------------------------------
+
+docker run -d --net grid --name selenium-node-chrome -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-chrome
+
+docker run -d --net grid --name selenium-node-firefox -e SE_EVENT_BUS_HOST=selenium-hub -e SE_EVENT_BUS_PUBLISH_PORT=4442 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 selenium/node-firefox
+
+
+
+-------run docker yaml file in the project to setup grid-------------
+go to the location of file , take cmd and run command
+docker-compose up
+
+
+
+
+
+
+
+
+
+
+

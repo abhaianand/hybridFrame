@@ -1,0 +1,18 @@
+run using maven pom.xml
+---------------------------
+
+pom.xml
+
+
+1 maven compiler plugin install in pom.xml
+2 maven surefile plugin  plugin install in pom.xml
+in surefil we mention the name of xml file name
+
+run using command promt
+--------------------------
+install maven in on os level
+--------------------------------
+open cmd check mvn -version (if not,install it )
+cd -project location
+dir
+mvn test

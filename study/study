@@ -1,0 +1,30 @@
+log level
+-------------
+log<trace<debug<info<warn<error<fatal<off
+
+selenium grid
+------------------
+
+standalonego to cmd and type
+java -jar selenium-grid-server.jar standalone
+and it will give you a link  http://172.31.224.1:4444, open it in browser
+
+hub
+
+docker images needed 
+-----------------------
+1 hub
+2 linux - firefox
+3 linux - chrome
+
+for hub - docker pull selenium/hub
+for linufirefox- docker pull selenium/node-firefox
+for linux chrome - docker pull selenium/node-chrome
+all container should be part of a single network
+
+
+-------run docker yaml file in the project to setup grid-------------
+go to the location of file , take cmd and run command
+docker-compose up
+
+
